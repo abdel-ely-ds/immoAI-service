@@ -41,5 +41,5 @@ def pre_process(data: pd.DataFrame) -> pd.DataFrame:
     data.city = data.city.str.lower().str.strip()
     data.district = data.district.str.lower().str.strip()
 
-    data.drop(columns=["location"], inplace=True)
+    data.drop(columns=["location", "size_and_rooms", "images"], inplace=True)
     return data
