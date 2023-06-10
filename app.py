@@ -7,14 +7,14 @@ from fastapi import FastAPI, Depends, Query
 import pandas as pd
 from langchain import OpenAI
 from langchain.agents import create_pandas_dataframe_agent
-
+from langchain.agents.agent import AgentExecutor
 from data_utils import read, pre_process, cols
 from services.dashboard_service import DashboardService
 
 app = FastAPI()
 df: Optional[pd.DataFrame] = None
-llm = None
-agent = None
+llm: Optional[OpenAI] = None
+agent: Optional[AgentExecutor] = None
 
 
 def _set_key():
