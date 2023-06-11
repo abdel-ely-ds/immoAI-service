@@ -25,7 +25,8 @@ async def startup_event():
     global df
     global agent
 
-    keys.export()
+    keys.set_openai()
+    keys.set_pinecone()
 
     df = du.read("data/immo_data.json")
     df = du.pre_process(df)[cols]
