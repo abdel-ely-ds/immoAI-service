@@ -1,9 +1,9 @@
 import json
-from pathlib import Path
 import os
+from pathlib import Path
 
 
-def set():
+def export() -> None:
     path = Path(".creds/.openai.json")
     with open(path) as f:
         creds = json.load(f)
