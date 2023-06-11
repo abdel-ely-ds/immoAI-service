@@ -2,8 +2,6 @@ import pandas as pd
 import json
 import re
 
-cols = ["price", "rooms", "surface", "city", "district"]
-
 
 def read(path: str) -> pd.DataFrame:
     data = []
@@ -25,7 +23,7 @@ def _room_and_size(s, index=0, sep1=",", sep2=" "):
 
 
 def _price(p):
-    num_p = re.sub(r'\D', '', p.replace("\xa0", ""))
+    num_p = re.sub(r"\D", "", p.replace("\xa0", ""))
     if not num_p:
         return
     return int(num_p)
