@@ -6,7 +6,7 @@ import pinecone
 
 
 def set_openai() -> None:
-    path = Path(".creds/.openai.json")
+    path = Path(os.path.abspath(".creds/.openai.json"))
     with open(path) as f:
         creds = json.load(f)
 
@@ -14,7 +14,7 @@ def set_openai() -> None:
 
 
 def set_pinecone() -> None:
-    path = Path(".creds/.pinecone.json")
+    path = Path(os.path.abspath(".creds/.pinecone.json"))
     with open(path) as f:
         creds = json.load(f)
 

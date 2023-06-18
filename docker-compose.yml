@@ -1,0 +1,9 @@
+version: '3'
+services:
+  immo:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+    - ./.creds/:/Workspace/.creds:ro
+    - ./data:/Workspace/data

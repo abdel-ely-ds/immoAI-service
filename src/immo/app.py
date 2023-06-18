@@ -6,11 +6,13 @@ from langchain import OpenAI
 from langchain.agents import initialize_agent
 from langchain.agents.agent import AgentExecutor
 from langchain.memory import ConversationBufferMemory
+from fastapi.middleware.cors import CORSMiddleware
 
-import data_utils as du
-import keys
-import tools
-from services.dashboard_service import DashboardService
+from immo import data_utils as du
+from immo import keys
+from immo import tools
+from immo.services.dashboard_service import DashboardService
+import os
 
 app = FastAPI()
 df: Optional[pd.DataFrame] = None
@@ -18,6 +20,16 @@ agent: Optional[AgentExecutor] = None
 memory = ConversationBufferMemory(memory_key="chat_history")
 
 cols = ["price", "rooms", "surface", "city", "district", "description"]
+
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event("startup")
@@ -28,7 +40,7 @@ async def startup_event():
     keys.set_openai()
     keys.set_pinecone()
 
-    df = du.read("data/immo_data.json")
+    df = du.read(os.path.abspath("data/immo_data.json"))
     df = du.pre_process(df)[cols]
     llm = OpenAI(temperature=0)
 
