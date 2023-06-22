@@ -9,7 +9,7 @@ from langchain.memory import ConversationBufferMemory
 from fastapi.middleware.cors import CORSMiddleware
 
 from immo import data_utils as du
-from immo import keys
+from immo import pinecone
 from immo import tools
 from immo.services.dashboard_service import DashboardService
 import os
@@ -37,8 +37,7 @@ async def startup_event():
     global df
     global agent
 
-    keys.set_openai()
-    keys.set_pinecone()
+    pinecone.init()
 
     df = du.read(os.path.abspath("data/immo_data.json"))
     df = du.pre_process(df)[cols]

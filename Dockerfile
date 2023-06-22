@@ -6,4 +6,4 @@ COPY src/immo ./src/immo
 COPY ./setup.cfg ./setup.cfg
 COPY ./setup.py ./setup.py
 RUN pip install -e .
-CMD ["uvicorn", "immo.app:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "immo.app:app", "--host", "0.0.0.0"]

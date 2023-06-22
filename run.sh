@@ -1,2 +1,2 @@
-sudo docker-compose build
-sudo docker-compose run immo
+docker-compose build
+docker-compose run immo
