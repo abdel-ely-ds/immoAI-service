@@ -2,7 +2,11 @@ version: '3'
 services:
   immo:
     build: .
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+      - PINECONE_ENV=${PINECONE_ENV}
     ports:
-      - "8000:8000"
+      - "8000:80"
     volumes:
     - ./data:/Workspace/data
