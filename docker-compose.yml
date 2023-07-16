@@ -2,6 +2,9 @@ version: '3'
 services:
   immo:
     build: .
+    args:
+      - IMAGE_NAME=${IMAGE_NAME}
+      - TAG=${TAG}
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - PINECONE_API_KEY=${PINECONE_API_KEY}
