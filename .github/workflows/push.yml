@@ -33,12 +33,3 @@ jobs:
         run: |
           chmod +x push.sh
           ./push.sh
-
-  notify-deploy:
-    needs: build-and-push
-    runs-on: ubuntu-latest
-
-    steps:
-      # Notify the deploy workflow
-      - name: Notify Deploy
-        run: echo "Build and push successful"
