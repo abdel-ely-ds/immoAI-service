@@ -1,6 +1,4 @@
 FROM python:3.9.0-slim
-ARG IMAGE_NAME
-ARG TAG
 WORKDIR /Workspace
 COPY ./requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
