@@ -20,7 +20,7 @@ jobs:
         run: docker-compose build --no-cache --build-arg IMAGE_NAME=${{ secrets.IMAGE_NAME }} --build-arg TAG=${{ secrets.TAG }}
 
       - name: echo
-        run: echo ${{ github.repository }}
+        run: echo ${{ secrets.IMAGE_NAME }}
 
       - name: Push to ECR
         env:
