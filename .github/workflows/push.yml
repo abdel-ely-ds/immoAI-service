@@ -17,12 +17,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
 
       - name: Build Docker image
-        run: docker-compose build
-        with:
-          images: ${{ secrets.IMAGE_NAME }}
-          tags: ${{ secrets.TAG }}
-      - name: echo
-        run: echo ${{ secrets.IMAGE_NAME }}
+        run: docker-compose build --build-arg IMAGE_NAME=${{ secrets.IMAGE_NAME }} --build-arg TAG=${{ secrets.TAG }}
 
       - name: Push to ECR
         env:
@@ -32,6 +27,7 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
           TAG: ${{ secrets.TAG }}
+          IMAGE_NAME: ${{ secrets.IMAGE_NAME }}
 
         if: ${{ success() }}
         run: |
