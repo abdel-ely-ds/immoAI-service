@@ -8,5 +8,3 @@ services:
       - PINECONE_ENV=${PINECONE_ENV}
     ports:
       - "8000:8000"
-    volumes:
-    - ./data:/Workspace/data
