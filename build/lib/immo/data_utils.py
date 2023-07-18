@@ -7,13 +7,13 @@ import boto3
 
 def read_from_s3(bucket: str, key: str) -> pd.DataFrame:
     # Initialize the S3 client
-    s3 = boto3.client("s3")
+    s3 = boto3.client('s3')
 
     # Get the data
     obj = s3.get_object(Bucket=bucket, Key=key)
 
     # Load data into pandas dataframe
-    data = pd.read_json(obj["Body"], lines=True)
+    data = pd.read_json(obj['Body'], lines=True)
 
     return data
 
