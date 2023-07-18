@@ -39,7 +39,10 @@ async def startup_event():
 
     pinecone.init()
 
-    df = du.read(os.path.abspath("data/immo_data.json"))
+    # Load data from S3
+    s3_bucket = os.getenv("S3_BUCKET")
+    s3_key = os.getenv("S3_KEY")
+    df = du.read_from_s3(s3_bucket, s3_key)
     df = du.pre_process(df)[cols]
     llm = OpenAI(temperature=0)
 

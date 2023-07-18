@@ -28,6 +28,8 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
           TAG: ${{ secrets.TAG }}
           IMAGE_NAME: ${{ secrets.IMAGE_NAME }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+          S3_KEY: ${{ secrets.S3_KEY }}
 
         if: ${{ success() }}
         run: |

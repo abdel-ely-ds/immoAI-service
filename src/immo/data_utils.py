@@ -2,15 +2,20 @@ import json
 import re
 
 import pandas as pd
+import boto3
 
 
-def read(path: str) -> pd.DataFrame:
-    data = []
-    with open(path, "r", encoding="utf8") as file:
-        for line in file:
-            data.append(json.loads(line))
+def read_from_s3(bucket: str, key: str) -> pd.DataFrame:
+    # Initialize the S3 client
+    s3 = boto3.client('s3')
 
-    return pd.DataFrame.from_records(data)
+    # Get the data
+    obj = s3.get_object(Bucket=bucket, Key=key)
+
+    # Load data into pandas dataframe
+    data = pd.read_json(obj['Body'], lines=True)
+
+    return data
 
 
 def _room_and_size(s, index=0, sep1=",", sep2=" "):
