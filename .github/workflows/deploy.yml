@@ -54,3 +54,4 @@ jobs:
       - name: SSH into EC2 and perform commands
         run: |
           ssh -i ~/.ssh/id_rsa ${{ secrets.USERNAME }}@${{ secrets.EC2_INSTANCE_IP }} 'echo Hello from EC2!'
+          
