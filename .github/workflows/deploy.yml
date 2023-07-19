@@ -11,6 +11,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
       - name: Debug - Test SSH Port Connectivity
         run: telnet ${{ secrets.EC2_INSTANCE_IP }} 22
 
@@ -20,3 +21,5 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 13.51.195.237
+          
+          
