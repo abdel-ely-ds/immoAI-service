@@ -12,9 +12,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Debug - Test SSH Port Connectivity
-        run: telnet ${{ secrets.EC2_INSTANCE_IP }} 22
-
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
