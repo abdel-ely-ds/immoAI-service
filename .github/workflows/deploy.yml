@@ -15,3 +15,4 @@ jobs:
       - name: Configure SSH
         run: |
           mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
