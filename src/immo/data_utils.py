@@ -6,10 +6,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+BUCKET = os.getenv("S3_BUCKET")
+KEY = os.getenv("S3_KEY")
 
-def read_from_s3() -> pd.DataFrame:
-    bucket = os.getenv("S3_BUCKET")
-    key = os.getenv("S3_KEY")
+def read_from_s3(bucket: str = BUCKET, key: str = KEY) -> pd.DataFrame:
 
     return pd.read_json(f"s3://{bucket}/{key}", lines=True)
 
