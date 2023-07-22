@@ -9,5 +9,8 @@ services:
       - PINECONE_ENV=${PINECONE_ENV}
       - S3_BUCKET=${S3_BUCKET}
       - S3_KEY=${S3_KEY}
+
+    volumes:
+      -  ~/.aws/:/root/.aws
     ports:
       - "8000:8000"
