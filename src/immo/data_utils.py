@@ -9,8 +9,8 @@ load_dotenv()
 BUCKET = os.getenv("S3_BUCKET")
 KEY = os.getenv("S3_KEY")
 
-def read_from_s3(bucket: str = BUCKET, key: str = KEY) -> pd.DataFrame:
 
+def read_from_s3(bucket: str = BUCKET, key: str = KEY) -> pd.DataFrame:
     return pd.read_json(f"s3://{bucket}/{key}", lines=True)
 
 
