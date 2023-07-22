@@ -5,3 +5,4 @@ __pycache__/
 .env
 .aws_env
 build/
+src/immo.egg-info

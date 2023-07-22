@@ -7,7 +7,7 @@ def lambda_handler(event, context):
 
     API_ENDPOINT = "http://<ec2-instance-public-ip>:<port>/reload"
 
-    req = urllib.request.Request(API_ENDPOINT, method='POST')
+    req = urllib.request.Request(API_ENDPOINT, method="POST")
 
     try:
         response = urllib.request.urlopen(req)
@@ -16,6 +16,6 @@ def lambda_handler(event, context):
         print(f"Failed to call reload API: {e}")
 
     return {
-        'statusCode': 200,
-        'body': json.dumps('Lambda for reloading data was executed!')
+        "statusCode": 200,
+        "body": json.dumps("Lambda for reloading data was executed!"),
     }

@@ -53,7 +53,7 @@ jobs:
 
       - name: SSH into EC2 and perform commands
         run: |
-          ssh -o StrictHostKeyChecking=no -i  ~/.ssh/id_rsa root@16.171.8.86 'echo Hello from EC2!'
+          ssh -i  ~/.ssh/id_rsa root@16.171.8.86 'echo Hello from EC2!'
           
 
 

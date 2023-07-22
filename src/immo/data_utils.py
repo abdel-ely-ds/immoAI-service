@@ -1,21 +1,17 @@
-import json
 import re
+from dotenv import load_dotenv
 
+import os
+
+load_dotenv()
 import pandas as pd
-import boto3
 
 
-def read_from_s3(bucket: str, key: str) -> pd.DataFrame:
-    # Initialize the S3 client
-    s3 = boto3.client("s3")
+def read_from_s3() -> pd.DataFrame:
+    bucket = os.getenv("S3_BUCKET")
+    key = os.getenv("S3_KEY")
 
-    # Get the data
-    obj = s3.get_object(Bucket=bucket, Key=key)
-
-    # Load data into pandas dataframe
-    data = pd.read_json(obj["Body"], lines=True)
-
-    return data
+    return pd.read_json(f"s3://{bucket}/{key}", lines=True)
 
 
 def _room_and_size(s, index=0, sep1=",", sep2=" "):

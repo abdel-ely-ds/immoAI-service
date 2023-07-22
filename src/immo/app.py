@@ -11,11 +11,6 @@ from immo import data_utils as du
 from immo import pinecone
 from immo import tools
 from immo.services.dashboard_service import DashboardService
-from dotenv import load_dotenv
-
-import os
-
-load_dotenv()
 
 app = FastAPI()
 df: Optional[pd.DataFrame] = None
@@ -42,9 +37,7 @@ async def startup_event():
 
     pinecone.init()
 
-    s3_bucket = os.getenv("S3_BUCKET")
-    s3_key = os.getenv("S3_KEY")
-    df = du.read_from_s3(s3_bucket, s3_key)
+    df = du.read_from_s3()
     df = du.pre_process(df)[cols]
     llm = OpenAI(temperature=0)
 
@@ -63,10 +56,7 @@ async def reload_data():
     global df
     global agent
 
-    # Load data from S3
-    s3_bucket = os.getenv("S3_BUCKET")
-    s3_key = os.getenv("S3_KEY")
-    df = du.read_from_s3(s3_bucket, s3_key)
+    df = du.read_from_s3()
     df = du.pre_process(df)[cols]
     llm = OpenAI(temperature=0)
 
@@ -79,7 +69,6 @@ async def reload_data():
         memory=memory,
     )
     return {"status": "reloaded"}
-
 
 
 @app.get("/")
