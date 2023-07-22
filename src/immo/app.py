@@ -58,6 +58,30 @@ async def startup_event():
     )
 
 
+@app.post("/reload")
+async def reload_data():
+    global df
+    global agent
+
+    # Load data from S3
+    s3_bucket = os.getenv("S3_BUCKET")
+    s3_key = os.getenv("S3_KEY")
+    df = du.read_from_s3(s3_bucket, s3_key)
+    df = du.pre_process(df)[cols]
+    llm = OpenAI(temperature=0)
+
+    agent = initialize_agent(
+        agent="conversational-react-description",
+        tools=tools.load(llm, df),
+        llm=llm,
+        verbose=True,
+        max_iterations=3,
+        memory=memory,
+    )
+    return {"status": "reloaded"}
+
+
+
 @app.get("/")
 def root():
     return {"message": "working"}
