@@ -1,10 +1,10 @@
+import os
 import re
+
+import pandas as pd
 from dotenv import load_dotenv
 
-import os
-
 load_dotenv()
-import pandas as pd
 
 
 def read_from_s3() -> pd.DataFrame:

@@ -1,15 +1,15 @@
 from typing import Optional
+
 import pandas as pd
 from fastapi import Depends, FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
 from langchain import OpenAI
 from langchain.agents import initialize_agent
 from langchain.agents.agent import AgentExecutor
 from langchain.memory import ConversationBufferMemory
-from fastapi.middleware.cors import CORSMiddleware
 
 from immo import data_utils as du
-from immo import pinecone
-from immo import tools
+from immo import pinecone, tools
 from immo.services.dashboard_service import DashboardService
 
 app = FastAPI()
