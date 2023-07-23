@@ -6,7 +6,8 @@ ImmoAI aims to help you search you dream house 🏠, do real estate market resea
 
 ## Requirements 
 1) You need to have OPENAI_API_KEY, PINECONE_API_KEY, PINECONE_ENV. You need to create a file .env and put the keys there
-2) AWS CLI configured
+2) AWS CLI configured.
+3) Ask to get access to the data.
 ## Getting Started
 Installation
 ------------
