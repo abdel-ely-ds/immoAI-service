@@ -1,4 +1,4 @@
-## ImmoAI
+# ImmoAI
 ImmoAI aims to help you search you dream house 🏠, do real estate market research using natural language. it's accessible via this link [immo.ai](http://localhost:3000/).
 
 ![Image Alt Text](assets/immo.PNG)
