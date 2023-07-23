@@ -10,18 +10,18 @@ ImmoAI aims to help you search you dream house 🏠, do real estate market resea
 3) Ask to get access to the data.
    
 ## Getting Started
-Installation
+### Installation
 ------------
 
     $ git clone https://github.com/abdel-ely-ds/immoAI-service.git
     $ cd immoai-service
     
-Run the service
+### Run the service
 ------------
     $ pip install -e .
     $ uvicorn immo.app:app
 
-Run with Docker
+### Run with Docker
 ------------
     $ docker-compose up
 
