@@ -31,6 +31,6 @@
     
 ## RoadMap <img src="https://github.com/abdel-ely-ds/immoAI-service/assets/76486913/9564ea11-cfc2-488e-9679-0a0ef0865a42" width="35">
 
-1) Add visualization.
-2) Possibility to visualize the relationship between price and some other variables.
-3) Add dashboard to give a global overwiew of the market.
+1) Add more cities/countries.
+3) Possibility to ask for visualization: the relationship between price and some other variables.
+4) Add dashboard to give a global overwiew of the market.
