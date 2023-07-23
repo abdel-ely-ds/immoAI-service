@@ -1,5 +1,7 @@
-## About The Project
-This project aims to help you search you dream house, do real estate market research using natural language.
+## ImmoAI
+ImmoAI aims to help you search you dream house, do real estate market research using natural language. it's accessible via this link [immo.ai](http://localhost:3000/).
+![Image Alt Text](assets/image.jpg)
+
 
 ## Requirements 
 1) You need to have OPENAI_API_KEY, PINECONE_API_KEY, PINECONE_ENV. You need to create a file .env and put the keys there
