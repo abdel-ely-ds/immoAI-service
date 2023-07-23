@@ -1,1 +1,4 @@
-docker-compose up
+#!/bin/bash
+
+set -xe
+
