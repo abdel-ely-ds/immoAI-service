@@ -1,7 +1,8 @@
 # ImmoAI <img src="https://github.com/abdel-ely-ds/immoAI-service/assets/76486913/5da8796b-07d6-4db2-9121-6c451e739a9e" width="35">
-
-ImmoAI aims to help you search you dream house 🏠, do real estate market research, get trends <img src="https://github.com/abdel-ely-ds/immoAI-service/assets/76486913/a8dda30f-1cf2-4673-a339-5099f63ac3e6" width="20">
- using natural language. it's accessible via this link [immo.ai](http://localhost:3000/).
+<p align="center">
+  <i align="center">ImmoAI aims to help you search you dream house 🏠, do real estate market research, get trends <img src="https://github.com/abdel-ely-ds/immoAI-service/assets/76486913/a8dda30f-1cf2-4673-a339-5099f63ac3e6" width="20">
+ using natural language.</i>
+</p> 
 
 ![Image Alt Text](assets/immo.PNG)
 
