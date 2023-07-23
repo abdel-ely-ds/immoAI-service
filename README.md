@@ -1,5 +1,5 @@
 ## About The Project
-This project aims to help you Search you dream house, do real estate market research using natural language.
+This project aims to help you search you dream house, do real estate market research using natural language.
 
 ## Requirements 
 1) You need to have OPENAI_API_KEY, PINECONE_API_KEY, PINECONE_ENV. You need to create a file .env and put the keys there
