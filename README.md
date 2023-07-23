@@ -24,5 +24,8 @@ ImmoAI aims to help you search you dream house 🏠, do real estate market resea
 ### Run with Docker
 ------------
     $ docker-compose up
-
-
+    
+## RoadMap
+1) Add visualization.
+2) Possibility to visualize the relationship between price and some other variables.
+3) Add dashboard to give a global overwiew of the market.
